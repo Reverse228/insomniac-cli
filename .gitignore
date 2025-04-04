@@ -2,12 +2,13 @@
 .idea/
 
 # Build output
-/dist
 dist/
 
 # Dependencies
-/node_modules
 node_modules/
+template/extras/node_modules/
+template/extras/package-lock.json
 
 # System files
 .DS_Store
+pnpm-lock.yaml

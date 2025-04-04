@@ -70,9 +70,17 @@ export const createProject = async ({
 
     selectLayoutFile({ projectDir, packages });
     selectPageFile({ projectDir, packages });
+
+    if (!fs.existsSync(path.join(projectDir, 'src/app/_components'))) {
+      fs.mkdirSync(path.join(projectDir, 'src/app/_components'));
+    }
   } else {
     selectAppFile({ projectDir, packages });
     selectIndexFile({ projectDir, packages });
+    
+    if (!fs.existsSync(path.join(projectDir, 'src/components'))) {
+      fs.mkdirSync(path.join(projectDir, 'src/components'));
+    }
   }
 
   // If no tailwind, select use css modules
